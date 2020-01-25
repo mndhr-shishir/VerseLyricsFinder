@@ -29,10 +29,35 @@ body {
    bottom: 0;
    width: 100%;
    background-color: black;
-   color: white;
+   /* color: white; */
    text-align: center;
    font-size: 12px;
    box-shadow: 0px -4px 5px rgba(0,0,0,.75);
+}
+
+.about-us {
+    position: relative;
+    text-align: center;
+    /* color: white; */
+}
+
+.centered {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 3%);
+}
+
+.main {
+  margin-bottom: 2rem;
+}
+
+.email > a:link {
+  color: navy;
+}
+
+.email > a:visited {
+  color: navy;
 }
 
 a:link {
