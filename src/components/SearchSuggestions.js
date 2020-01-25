@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import SearchForm from './SearchForm';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import Title from './Title';
 
 
 const ShowSuggestions = ({ suggestions }) => {
@@ -120,6 +121,7 @@ class SearchSuggestions extends Component {
 
     return (
       <div className="container">
+        <Title title={`Search results for ${title}`} />
         <SearchForm />
         <h1 style={{paddingTop: "2rem", borderBottom: "1px solid black"}}>Search Results for "<span style={{color: "#8f332c", fontStyle: "italic"}}>{title}</span>":</h1>
         {result}

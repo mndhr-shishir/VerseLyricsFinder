@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import axios from 'axios';
 import SearchForm from './SearchForm';
 import SidebarSuggestions from './SidebarSuggestions';
+import Title from './Title';
 
 
 const FormatLyrics = ({ lyrics }) => {
@@ -99,6 +100,7 @@ class ShowLyrics extends Component {
 
   render() {
     const { artist, title } = this.props.match.params;
+    const tabTitle = `${artist} - ${title}`.replace(/(^\w{1})|(\s{1}\w{1})/g, match => match.toUpperCase());
     // const { fetching, found, errorMsg, lyrics } = this.state;
     const { fetching, found, errorMsg, lyrics, ytVideoID } = this.state;
 
@@ -130,6 +132,7 @@ class ShowLyrics extends Component {
 
     return (
       <div className="container">
+        <Title title={`Verse | ${tabTitle} Lyrics`} />
         <SearchForm />
         <div className="search-result">
           {result}

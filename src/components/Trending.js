@@ -48,7 +48,7 @@ const TopCharts = () => {
           </div>
         </Link>
 
-     	
+
 
         <Link to={`/lyrics/Linkin park/In the end`}>
           <div className="grid-item card">
@@ -80,7 +80,7 @@ const TopCharts = () => {
           </div>
         </Link>
 
-        <Link to={`/lyrics/Greenday/Know your enemy`}>
+        <Link to={`/lyrics/Green day/Know your enemy`}>
           <div className="grid-item card">
             <img alt="" src="http://cdn-images.deezer.com/images/cover/1e17054b7bfa6576f64ea867b71ef479/250x250-000000-80-0-0.jpg"  /><br/>
             <div className="card-container">
