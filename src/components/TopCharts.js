@@ -1,12 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import SearchForm from './SearchForm';
+import Title from './Title';
 
 
 // NOTE hello dude
 const TopCharts = () => {
   return (
     <div className="container top-charts" style={{"textTransform": "capitalize"}}>
+      <Title title={"Verse | Top Charts"} />
       <SearchForm />
       <h1 style={{borderBottom: "1px solid black"}}>Top Charts</h1>
       <div className="grid-container">
