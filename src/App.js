@@ -24,7 +24,7 @@ function App() {
         {/*<Route component={Error404}></Route>*/}
       </Switch>
       <div className="footer">
-        <p><img style={{verticalAlign: "middle"}} alt=""src={logo} width="1.5%" height="1.5%"/>erse, 2020</p>
+        <p><img style={{verticalAlign: "middle"}} alt="" src={logo} width="1.5%" height="1.5%"/></p>
       </div>
     </div>
   );

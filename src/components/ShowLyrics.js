@@ -48,7 +48,7 @@ class ShowLyrics extends Component {
       .then(res => {
         // console.log(res.data);
         this.setState({ fetching: false, found: true, lyrics: res.data.lyrics });
-        // this.fetchYoutubeVideo();
+        this.fetchYoutubeVideo();
       })
       .catch(err => {
         this.setState({ fetching: false, found: false, errorMsg: err.response.data.error || "Oops, Something Went Wrong!" });
