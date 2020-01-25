@@ -192,9 +192,9 @@ input[type="button"]
 }
 
 .submit {
-  background-color: #edada8;
+  background-color: #b3655f;
   color: black;
-  border: 2px solid #edada8;
+  border: 2px solid #b3655f;
 }
 
 .submit:hover {
