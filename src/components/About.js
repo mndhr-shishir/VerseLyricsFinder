@@ -12,7 +12,7 @@ const About = () => {
             We use "VERSE" because it means the main part of lyrics.
             As a music lovers, We realized that most of the websites had a complex user interface.
             We provide a simple and interactive webpage in which a user can search the lyrics of a particular song along with its Youtube video.
-            That's why verse was created.This is when a concept become reality
+            That's why verse was created. This is when a concept become reality
           </p>
         </div>
         <h3 style={{borderBottom: "1px solid"}}>Our Team</h3>
