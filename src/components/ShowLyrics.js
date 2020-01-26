@@ -64,8 +64,7 @@ class ShowLyrics extends Component {
         part: 'snippet',
         type: 'video',
         maxResults: 1,
-        // key: process.env.REACT_APP_YT_API_KEY_TWO
-        key: 'AIzaSyCpub8eBPGA66VRSYC4YQdi8RVWFqPOcto'
+        key: process.env.REACT_APP_YT_API_KEY
       }
     }).then(res => {
         // console.log(res.data.items);
