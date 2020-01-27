@@ -16,17 +16,17 @@ class SearchForm extends Component {
     const { query } = this.state;
 
     return (
-     <div className="input-form">
-       <form>
-         <input className="input" placeholder="enter any song or artist" name="query" type="text" value={query} onChange={this.handleChange}/>
-         <Link to={`/search/${query}`}>
-             <button
+      <div className="input-form">
+        <form>
+          <input className="input" placeholder="enter any song or artist" name="query" type="text" value={query} onChange={this.handleChange}/>
+          <Link to={`/search/${query}`}>
+            <button
                className="button submit"
                type="submit"
                disabled={!query}>Search</button>
-         </Link>
-       </form>
-     </div>
+          </Link>
+        </form>
+      </div>
     );
   }
 }

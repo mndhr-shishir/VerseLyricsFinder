@@ -15,7 +15,7 @@ const Home = () => {
         <p className="moto"><strong>A lyrics finder app</strong></p>
       </div>
       <SearchForm />
-      <Trending/>
+      <Trending />
     </div>
   );
 }

@@ -7,7 +7,7 @@ import TopCharts from './components/TopCharts';
 import SearchSuggestions from './components/SearchSuggestions';
 import ShowLyrics from './components/ShowLyrics';
 import './App.css';
-import logo from './logo.png'
+import logo from './logo.png';
 
 
 function App() {

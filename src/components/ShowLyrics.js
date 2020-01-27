@@ -47,7 +47,7 @@ class ShowLyrics extends Component {
       .get(`https://api.lyrics.ovh/v1/${artist}/${title}/`)
       .then(res => {
         // console.log(res.data);
-        this.setState({ fetching: false, found: true, lyrics: res.data.lyrics });
+        this.setState({ fetching: true, found: false, lyrics: res.data.lyrics });
         this.fetchYoutubeVideo();
       })
       .catch(err => {
@@ -80,29 +80,12 @@ class ShowLyrics extends Component {
     }
   }
 
-  componentDidUpdate(prevProps) {
-    const newParams = this.props.match.params;
-    const oldParams = prevProps.match.params;
-
-    // Only update the component if the current and previous props don't match ( in this case the url parameters ),
-    // reset the state at the end
-    if ((newParams.artist !== oldParams.artist) || (newParams.title !== oldParams.title)) {
-      console.log("component updated!");
-
-      this.setState({ fetching: true, found: false, errorMsg: '', lyrics: '' });
-
-      if (this.validUrlParams()) {
-        this.fetchLyrics();
-      }
-    }
-  }
-
-
   render() {
     const { artist, title } = this.props.match.params;
     const tabTitle = `${artist} - ${title}`.replace(/(^\w{1})|(\s{1}\w{1})/g, match => match.toUpperCase());
     // const { fetching, found, errorMsg, lyrics } = this.state;
     const { fetching, found, errorMsg, lyrics, ytVideoID } = this.state;
+    const ytURL = `http://www.youtube.com/embed/${ytVideoID}`;
 
 
     const result = (
@@ -118,8 +101,8 @@ class ShowLyrics extends Component {
               </div>
               <div className="grid-item" style={{paddingTop: "0.2rem"}}>
                <iframe title="ytvideo" id="player" type="text/html" width="420" height="315"
-                 src={`http://www.youtube.com/embed/${ytVideoID}`}
-                 frameborder="0"></iframe>
+                 src={ytURL}
+                 frameBorder="0"></iframe>
                 <SidebarSuggestions artist={artist} title={title} />
               </div>
             </div>

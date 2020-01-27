@@ -5,9 +5,7 @@ const Title = ({ title }) => {
   const defaultTitle = 'Verse | Song Lyrics and More';
 
   return (
-    <Helmet>
-      <title>{title ? title : defaultTitle}</title>
-    </Helmet>
+    <Helmet><title>{title ? title : defaultTitle}</title></Helmet>
   );
 }
 

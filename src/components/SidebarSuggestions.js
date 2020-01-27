@@ -19,6 +19,8 @@ class SidebarSuggestions extends Component {
 
     let seenSuggestions = [];
     let uniqueSuggestions = [];
+
+    // Remove the originally searched song
     let items = res.data.data.filter((item) => (
       item.artist.name.toLowerCase() === artist.toLowerCase() &&
       item.title.toLowerCase() !== title.toLowerCase()
@@ -54,7 +56,7 @@ class SidebarSuggestions extends Component {
   render() {
     return (
       <div style={{textAlign: "left"}}>
-        <h3 style={{marginTop: "2rem", borderBottom: "1px solid black"}}>Other tracks by {this.props.artist}</h3>
+        <h3 style={{marginTop: "2rem", borderBottom: "1px solid black"}}>Other tracks by <span style={{textTransform: "capitalize"}}>{this.props.artist}</span></h3>
         <ul style={{listStyle: "none"}}>
         {this.state.suggestions.map((item, ind) =>
           <li key={ind} style={{marginBottom: ".2rem"}}>

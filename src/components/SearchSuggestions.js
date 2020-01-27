@@ -32,6 +32,7 @@ class SearchSuggestions extends Component {
   };
 
   componentDidMount() {
+    console.log("Hello!");
     if (this.validUrlParams()) {
       this.fetchSuggestions();
     }
@@ -90,7 +91,7 @@ class SearchSuggestions extends Component {
     // Only update the component if the current and previous props don't match ( in this case the url parameters ),
     // reset the state at the end
     if ((newParams.title !== oldParams.title)) {
-      // console.log("component updated!");
+      console.log("component updated!");
 
       this.setState({ fetching: true, found: false, errorMsg: '', suggestions:[] });
 
@@ -121,7 +122,7 @@ class SearchSuggestions extends Component {
 
     return (
       <div className="container">
-        <Title title={`Search results for ${title}`} />
+        <Title title={`Search results for ${title} | Verse`} />
         <SearchForm />
         <h1 style={{paddingTop: "2rem", borderBottom: "1px solid black"}}>Search Results for "<span style={{color: "#8f332c", fontStyle: "italic"}}>{title}</span>":</h1>
         {result}
