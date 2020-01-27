@@ -19,7 +19,9 @@
 .env.test.local
 .env.production.local
 
-tags*
+tags
+tags.temp
+tags.lock
 
 npm-debug.log*
 yarn-debug.log*
