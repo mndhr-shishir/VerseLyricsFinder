@@ -89,7 +89,6 @@ class ShowLyrics extends Component {
       console.log("component updated!");
 
       this.setState({ fetching: true, found: false, errorMsg: '', lyrics: '' });
-
       if (this.validUrlParams()) {
         this.fetchLyrics();
       }
