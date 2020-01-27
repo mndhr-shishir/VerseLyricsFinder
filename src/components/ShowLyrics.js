@@ -64,8 +64,7 @@ class ShowLyrics extends Component {
         part: 'snippet',
         type: 'video',
         maxResults: 1,
-        // key: process.env.REACT_APP_YT_API_KEY_TWO
-        key: 'AIzaSyCpub8eBPGA66VRSYC4YQdi8RVWFqPOcto'
+        key: process.env.REACT_APP_YT_API_KEY
       }
     }).then(res => {
         // console.log(res.data.items);
@@ -80,11 +79,29 @@ class ShowLyrics extends Component {
     }
   }
 
+  componentDidUpdate(prevProps) {
+    const newParams = this.props.match.params;
+    const oldParams = prevProps.match.params;
+
+    // Only update the component if the current and previous props don't match ( in this case the url parameters ),
+    // reset the state at the end
+    if ((newParams.artist !== oldParams.artist) || (newParams.title !== oldParams.title)) {
+      console.log("component updated!");
+
+      this.setState({ fetching: true, found: false, errorMsg: '', lyrics: '' });
+
+      if (this.validUrlParams()) {
+        this.fetchLyrics();
+      }
+    }
+  }
+
+
   render() {
     const { artist, title } = this.props.match.params;
+    const { fetching, found, errorMsg, lyrics, ytVideoID } = this.state;
     const tabTitle = `${artist} - ${title}`.replace(/(^\w{1})|(\s{1}\w{1})/g, match => match.toUpperCase());
     // const { fetching, found, errorMsg, lyrics } = this.state;
-    const { fetching, found, errorMsg, lyrics, ytVideoID } = this.state;
     const ytURL = `http://www.youtube.com/embed/${ytVideoID}`;
 
 
