@@ -47,8 +47,8 @@ class ShowLyrics extends Component {
       .get(`https://api.lyrics.ovh/v1/${artist}/${title}/`)
       .then(res => {
         // console.log(res.data);
-        this.setState({ fetching: true, found: false, lyrics: res.data.lyrics });
-        this.fetchYoutubeVideo();
+        this.setState({ fetching: false, found: true, lyrics: res.data.lyrics });
+        // this.fetchYoutubeVideo();
       })
       .catch(err => {
         this.setState({ fetching: false, found: false, errorMsg: err.response.data.error || "Oops, Something Went Wrong!" });

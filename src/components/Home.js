@@ -12,7 +12,7 @@ const Home = () => {
       <Title />
       <div className="motive">
         <Link to="/"><img alt="" src={logo} height="100%" width="175"/></Link>
-        <p className="moto"><strong>A lyrics finder app</strong></p>
+        <p className="moto"><strong>A very good lyrics finder app</strong></p>
       </div>
       <SearchForm />
       <Trending />
