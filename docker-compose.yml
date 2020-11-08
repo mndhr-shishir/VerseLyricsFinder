@@ -1,0 +1,10 @@
+version: "3.8"
+
+services:
+  react-frontend:
+    build: .
+    volumes:
+      - ./src:/home/app/src
+    ports:
+      - 8000:3000
+    stdin_open: true
